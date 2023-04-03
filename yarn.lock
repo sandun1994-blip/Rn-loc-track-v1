@@ -2226,6 +2226,11 @@
   dependencies:
     "@sinonjs/commons" "^2.0.0"
 
+"@supersami/rn-foreground-service@^2.1.0":
+  "integrity" "sha512-Ou++vMcW42uZDuZr7wWMJYKZL7Ui1Z5lfY5fg7LT2vVwuuDNjjFf4RCHxul9y33VcoQrPTyPJhd0jQ3+3kFi8w=="
+  "resolved" "https://registry.npmjs.org/@supersami/rn-foreground-service/-/rn-foreground-service-2.1.0.tgz"
+  "version" "2.1.0"
+
 "@tsconfig/react-native@^2.0.2":
   "integrity" "sha512-jE58snEKBd9DXfyR4+ssZmYJ/W2mOSnNrvljR0aLyQJL9JKX6vlWELHkRjb3HBbcM9Uy0hZGijXbqEAjOERW2A=="
   "resolved" "https://registry.npmjs.org/@tsconfig/react-native/-/react-native-2.0.3.tgz"
@@ -6819,7 +6824,7 @@
     "prop-types" "^15.7.2"
     "yargs" "^16.1.1"
 
-"react-native@*", "react-native@^0.0.0-0 || 0.60 - 0.72 || 1000.0.0", "react-native@>=0.33", "react-native@>=0.58.4", "react-native@>=0.59", "react-native@>=0.60", "react-native@0.71.5":
+"react-native@*", "react-native@^0.0.0-0 || 0.60 - 0.72 || 1000.0.0", "react-native@>=0.33", "react-native@>=0.58.4", "react-native@>=0.59", "react-native@>=0.59.0", "react-native@>=0.60", "react-native@0.71.5":
   "integrity" "sha512-fMptnHXoIPotg7gPYAvjMRnfC6gUSkTJzgaIDQJTY/f5F+g6qph5J1xT9LCuWuNguyQ9dh8b0MZTK5ROvTTV9w=="
   "resolved" "https://registry.npmjs.org/react-native/-/react-native-0.71.5.tgz"
   "version" "0.71.5"
