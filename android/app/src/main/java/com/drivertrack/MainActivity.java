@@ -1,4 +1,5 @@
 package com.drivertrack;
+import android.content.Intent;
 import android.os.Bundle;
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
@@ -23,7 +24,12 @@ public class MainActivity extends ReactActivity {
       super.onCreate(null);
     }
     // ...
-  
+    @Override
+    public void onNewIntent(Intent intent) {
+       
+        super.onNewIntent(intent);
+        
+    }
 
   /**
    * Returns the instance of the {@link ReactActivityDelegate}. Here we use a util class {@link
