@@ -9,15 +9,40 @@ import WelcomeScreen from '../screens/WelcomeScreen'
 import { onAuthStateChanged } from 'firebase/auth'
 import { auth } from '../config/firebase'
 import { setUser } from '../redux/slices/user'
+import AsyncStorage from '@react-native-async-storage/async-storage'
+
 
 
 const Stack =createNativeStackNavigator()
 
 export default function AppNavigation() {
+    const {user} =useSelector(state=>state.user)
+    
+const getData = async () => {
+    try {
+      const jsonValue = await AsyncStorage.getItem('user');
+     
+    
+      if (jsonValue) {
+        
+        dispatch(setUser(jsonValue)) 
+        
+      }
+      return jsonValue != null ? JSON.parse(jsonValue) : null;
+    } catch (e) {
+      // error reading value
+    }
+  };
+  
 
-const {user} =useSelector(state=>state.user)
+
 //console.log(user);
 const dispatch =useDispatch()
+
+useEffect(()=>{
+ getData()
+
+},[])
 
 
 // useEffect(() => {
@@ -39,9 +64,17 @@ const dispatch =useDispatch()
 
     
 // }, [])
-onAuthStateChanged(auth,us=>{
+onAuthStateChanged(auth,async(us)=>{
    
-    dispatch(setUser(us))
+    
+    if (us) {
+        dispatch(setUser(us)) 
+        const jsonValue = JSON.stringify(us)
+        await AsyncStorage.setItem('user', jsonValue)
+
+    }
+   
+    
 })
 
 if (user) {
