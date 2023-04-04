@@ -80,26 +80,27 @@ onAuthStateChanged(auth,async(us)=>{
 if (user) {
     return (
  
-        <NavigationContainer>
+        
          <Stack.Navigator initialRouteName='Home'>
          <Stack.Screen name='Home' component={HomeScreen} options={{headerShown:false}}/>
             <Stack.Screen name='SignIn' component={SignInScreen} options={{headerShown:false}}/>
             <Stack.Screen name='SignUp' component={SignUpScreen} options={{headerShown:false}}/>
          </Stack.Navigator>
-        </NavigationContainer>
+      
         
       ) 
 }else{
     return (
  
-        <NavigationContainer>
-         <Stack.Navigator initialRouteName='Home'>
+        
+         <Stack.Navigator >
        
          <Stack.Screen name='Login' component={WelcomeScreen} options={{headerShown:false}}/>
+         <Stack.Screen name='Home' component={HomeScreen} options={{headerShown:false}}/>
             <Stack.Screen name='SignIn' component={SignInScreen} options={{headerShown:false}}/>
             <Stack.Screen name='SignUp' component={SignUpScreen} options={{headerShown:false}}/>
          </Stack.Navigator>
-        </NavigationContainer>
+       
         
       )
 }

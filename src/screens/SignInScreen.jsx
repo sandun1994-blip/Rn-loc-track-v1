@@ -14,12 +14,12 @@ import { auth } from '../config/firebase';
 
 
 
-export default function SignInScreen() {
+export default function SignInScreen({navigation}) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const {userLoading} = useSelector(state=> state.user);
 
-    const navigation = useNavigation();
+    // const navigation = useNavigation();
 
      const dispatch = useDispatch();
 
@@ -32,8 +32,8 @@ export default function SignInScreen() {
                 dispatch(setUserLoading(true));
                 await signInWithEmailAndPassword(auth, email, password);
                 dispatch(setUserLoading(false));
-                
-                navigation.navigate('Home')
+                // navigation.navigate('Main', { screen: 'Home' });
+               
             }catch(e){
                 dispatch(setUserLoading(false));
                 Snackbar.show({

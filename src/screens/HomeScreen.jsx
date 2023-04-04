@@ -48,11 +48,7 @@ const starttask = () => {
 
   const dispatch = useDispatch();
 
-const handleLogout=async()=>{
-  await signOut(auth)
-  await AsyncStorage.removeItem('user');
-  dispatch(setUser(null))
-}
+
 
 
 const handleNotify=()=>{
@@ -72,9 +68,7 @@ const handleNotify=()=>{
       </TouchableOpacity>
       <View>
       </View>
-      <TouchableOpacity className='p-2 px-3 bg-white border border-gray-200 rounded-full' onPress={handleLogout}>
-        <Text>Logout</Text>
-      </TouchableOpacity>
+     
     </View>
   </ScreenWrapper>
   )
