@@ -10,6 +10,7 @@ import { onAuthStateChanged } from 'firebase/auth'
 import { auth } from '../config/firebase'
 import { setUser } from '../redux/slices/user'
 import AsyncStorage from '@react-native-async-storage/async-storage'
+import DestinationSearch from '../screens/DestinationSearch'
 
 
 
@@ -83,6 +84,7 @@ if (user) {
         
          <Stack.Navigator initialRouteName='Home'>
          <Stack.Screen name='Home' component={HomeScreen} options={{headerShown:false}}/>
+         <Stack.Screen name={"DestinationSearch"} component={DestinationSearch} options={{headerShown:false}}/>
             <Stack.Screen name='SignIn' component={SignInScreen} options={{headerShown:false}}/>
             <Stack.Screen name='SignUp' component={SignUpScreen} options={{headerShown:false}}/>
          </Stack.Navigator>

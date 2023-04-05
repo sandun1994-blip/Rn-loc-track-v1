@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity } from 'react-native'
+import { View, Text, TouchableOpacity, Dimensions } from 'react-native'
 import React ,{useEffect} from 'react'
 import ScreenWrapper from '../components/ScreenWrapper'
 import { signOut } from 'firebase/auth'
@@ -9,6 +9,9 @@ import { setUser } from '../redux/slices/user'
 import PushNotification from 'react-native-push-notification';
 import ReactNativeForegroundService from '@supersami/rn-foreground-service'
 import { collection, getDocs } from 'firebase/firestore'
+import HomeMap from '../components/HomeMap'
+import Message from '../components/Message'
+import HomeSearch from '../components/HomeSearch'
 export default function HomeScreen() {
 
 const createChanels =()=>{
@@ -62,14 +65,11 @@ const handleNotify=()=>{
 
 
   return (<ScreenWrapper>
-    <View className='flex-row justify-between items-center p-4'>
-    <TouchableOpacity className='p-2 px-3 bg-white border border-gray-200 rounded-full' onPress={starttask}>
-        <Text>Notify</Text>
-      </TouchableOpacity>
-      <View>
+     <View style={{height: Dimensions.get('window').height-400}}>
+        <HomeMap />
       </View>
-     
-    </View>
+      <Message/>
+      <HomeSearch/>
   </ScreenWrapper>
   )
 }
